@@ -1,3 +1,4 @@
+#include "order_calc.h"
 // 1. Расчёт скидки
 // Описание: возвращает сумму со скидкой в зависимости от стоимости заказа и статуса клиента.
 // - Если total < 0, возвращает -1.0 (ошибка).
@@ -31,7 +32,7 @@ double applyDiscount(double total, bool isPremium) {
 double calcShipping(double total) { 
   if (total < 0)        // 2
     return -1.0;        // 3
-  if (total <= 5000)    // 4
+  if (total <= 5000)    // 4          // ????????????
     return 0.0;         // 5
   return 300.0;         // 6
 }
