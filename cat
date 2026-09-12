@@ -1,7 +1,7 @@
 lab1:
 	cd lab1/build
 	cmake ..
-	cmake -build .
-
+	cmake --build .
+	./lab_tests
 
 
