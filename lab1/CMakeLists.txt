@@ -8,10 +8,9 @@ include(FetchContent)
 FetchContent_Declare(
   googletest
   URL https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
-  DOWNLOAD_EXTRACT_TIMESTAMP TRUE # <--- Убирает предупреждение (Warning)
+  DOWNLOAD_EXTRACT_TIMESTAMP TRUE 
 )
 
-# Для Windows/WSL: предотвращает конфликты рантайм библиотек
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
@@ -20,15 +19,14 @@ enable_testing()
 add_executable(lab_tests
   order_calc.cpp
   order_calc_tests.cpp
+  own_tests.cpp
 )
 
-# ИСПРАВЛЕНИЕ ЗДЕСЬ: убрали префикс GTest::
 target_link_libraries(lab_tests gtest_main)
 
 include(GoogleTest)
 gtest_discover_tests(lab_tests)
 
-# Опции для генерации отчета о покрытии (для отчета)
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(lab_tests PRIVATE --coverage)
     target_link_options(lab_tests PRIVATE --coverage)
