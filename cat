@@ -1,0 +1,7 @@
+lab1:
+	cd lab1/build
+	cmake ..
+	cmake -build .
+
+
+
