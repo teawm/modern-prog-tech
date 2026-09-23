@@ -1,0 +1,5 @@
+if(EXISTS "/mnt/c/apihm/7s/modern-prog-tech/lab2/build/lab_tests_e3b0c442_tests.cmake")
+  include("/mnt/c/apihm/7s/modern-prog-tech/lab2/build/lab_tests_e3b0c442_tests.cmake")
+else()
+  add_test(lab_tests_NOT_BUILT lab_tests_NOT_BUILT)
+endif()

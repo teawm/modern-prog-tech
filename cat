@@ -3,5 +3,3 @@ lab1:
 	cmake ..
 	cmake --build .
 	./lab_tests
-
-

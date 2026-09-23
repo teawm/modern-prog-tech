@@ -161,7 +161,6 @@ std::string Playlist::ToString() const
 */
 void Playlist::Merge(const Playlist &other)
 {
-    // Считаем новые треки
     int newTracksCount = 0;
     for (int i = 0; i < other.count; i++)
     {
@@ -170,19 +169,19 @@ void Playlist::Merge(const Playlist &other)
             newTracksCount++;
         }
     }
-    // Украдено из Playlist::Add
-    if (count + newTracksCount >= capacity)
+
+    if (count + newTracksCount > capacity)
     {
-        throw PlaylistException("плейлист заполнен, вместимость: " + std::to_string(capacity));
+        throw PlaylistException("недостаточно вместимости для объединения: требуется " 
+            + std::to_string(count + newTracksCount) 
+            + ", доступно " + std::to_string(capacity));
     }
 
-    // Добавляем треки в плейлист (ъЕЕЕЕЕЕЕ РОККККК)
     for (int i = 0; i < other.count; i++)
     {
         if (!Contains(other.tracks[i]))
         {
-            tracks[count] = other.tracks[i];
-            count++;
+            Add(other.tracks[i]);
         }
     }
 }

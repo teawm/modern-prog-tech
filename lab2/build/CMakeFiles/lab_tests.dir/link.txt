@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -Wl,--dependency-file=CMakeFiles/lab_tests.dir/link.d CMakeFiles/lab_tests.dir/Playlist.cpp.o CMakeFiles/lab_tests.dir/Playlist_tests.cpp.o -o lab_tests  lib/libgtest_main.a lib/libgtest.a
