@@ -1,5 +1,9 @@
-lab1:
-	cd lab1/build
+lab1/2:
+	cd labX/build
 	cmake ..
 	cmake --build .
 	./lab_tests
+lab 3:
+	cmake -S . -B build
+	cmake --build build
+	./TaskManager_FLTK
