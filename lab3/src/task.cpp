@@ -7,13 +7,8 @@
 Выход: созданный объект Task.
 Постусловия: все пять полей объекта имеют определённые значения.
 */
-Task::Task(int id, std::string title)
+Task::Task(int id, std::string title) : id(id), title(title), description(""),status("Todo"), priority("Medium");
 {
-    this->id = id;
-    this->title = title;
-    this->description = "";
-    this->status = "Todo";
-    this->priority = "Medium";
 }
 
 /*
