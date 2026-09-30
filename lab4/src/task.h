@@ -7,20 +7,23 @@ class Task
 {
 private:
     int id;
+    int projectId;
     std::string title;
     std::string description;
     std::string status;
     std::string priority;
 
 public:
-    Task(int id, std::string title);
+    Task(int id, std::string title, int projectId = 0);
 
-    int GetId();
-    std::string GetTitle();
-    std::string GetDescription();
-    std::string GetStatus();
-    std::string GetPriority();
+    int GetId() const;
+    int GetProjectId() const;
+    std::string GetTitle() const;
+    std::string GetDescription() const;
+    std::string GetStatus() const;
+    std::string GetPriority() const;
 
+    void SetProjectId(int projectId);
     void SetTitle(std::string title);
     void SetDescription(std::string description);
     void SetStatus(std::string status);

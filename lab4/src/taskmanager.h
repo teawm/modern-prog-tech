@@ -23,7 +23,8 @@ public:
     void AddTask(std::string title,
                  std::string description,
                  std::string priority,
-                 std::string status);
+                 std::string status,
+                 int projectId);
 
     void UpdateTask(int index,
                     std::string title,
@@ -33,6 +34,12 @@ public:
 
     void DeleteTask(int index);
     std::vector<Task> GetTasks();
+
+    bool MoveTaskToProject(int taskIndex, int projectId);
+
+    int    CountTasksInProject(int projectId);
+    int    CountTasksInProjectByStatus(int projectId, std::string status);
+    double CompletionPercent(int projectId);
 
     void AddProject(std::string name);
     void DeleteProject(int index);
