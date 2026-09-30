@@ -3,7 +3,8 @@ lab1/2:
 	cmake ..
 	cmake --build .
 	./lab_tests
-lab 3:
+lab 3/4:
+	cd labX
 	cmake -S . -B build
 	cmake --build build
 	./TaskManager_FLTK
