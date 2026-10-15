@@ -1,0 +1,1 @@
+PICKUP_DB="host=localhost dbname=pickup user=pickup_user password=pickup_pass" ./build/pickup_point
